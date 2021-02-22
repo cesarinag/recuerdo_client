@@ -9,6 +9,9 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+import IndexHaiku from './components/IndexHaiku/IndexHaiku'
+import CreateHaiku from './components/CreateHaiku/CreateHaiku'
+import ShowHaiku from './components/ShowHaiku/ShowHaiku'
 
 class App extends Component {
   constructor (props) {
@@ -64,6 +67,15 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-pw/' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/haikus/' render={() => (
+            <IndexHaiku msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/haiku/' render={() => (
+            <CreateHaiku msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/haikus/:id/' render={() => (
+            <ShowHaiku msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
