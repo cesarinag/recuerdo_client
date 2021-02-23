@@ -12,21 +12,19 @@ function Cards (haiku) {
           <ul className='cards__items'>
             <Card>
               <Card.Header>
-              post
+              post:
               </Card.Header>
               <Card.Body>
                 <blockquote className="blockquote mb-0">
                   <p>
                     {' '}
-                    {haiku.fiveone}
-                    {haiku.seven}
-                    {haiku.fivetwo}
+                    this is a haiku, allegedly
                     {' '}
                   </p>
                   <footer className="blockquote-footer">
                     {haiku.owner}
                     <cite title="Source Title">
-                      {haiku.title}
+                      a human
                     </cite>
                   </footer>
                 </blockquote>
@@ -35,21 +33,19 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post
+                post:
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
                     <p>
                       {' '}
-                      {haiku.fiveone}
-                      {haiku.seven}
-                      {haiku.fivetwo}
+                      gulping June rains, swollen Mogami river
                       {' '}
                     </p>
                     <footer className="blockquote-footer">
-                      {haiku.owner}
+                      basho
                       <cite title="Source Title">
-                        {haiku.title}
+                        love and barley
                       </cite>
                     </footer>
                   </blockquote>
@@ -59,21 +55,19 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post
+                post:
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
                     <p>
                       {' '}
-                      {haiku.fiveone}
-                      {haiku.seven}
-                      {haiku.fivetwo}
+                      a chocolatiere????
                       {' '}
                     </p>
                     <footer className="blockquote-footer">
                       {haiku.owner}
                       <cite title="Source Title">
-                        {haiku.title}
+                        who likes chocolate
                       </cite>
                     </footer>
                   </blockquote>
@@ -83,21 +77,19 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post
+                post:
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
                     <p>
                       {' '}
-                      {haiku.fiveone}
-                      {haiku.seven}
-                      {haiku.fivetwo}
+                      she has words to say
                       {' '}
                     </p>
                     <footer className="blockquote-footer">
                       {haiku.owner}
                       <cite title="Source Title">
-                        {haiku.title}
+                        maybe your mom
                       </cite>
                     </footer>
                   </blockquote>
@@ -107,21 +99,19 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post
+                post:
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
                     <p>
                       {' '}
-                      {haiku.fiveone}
-                      {haiku.seven}
-                      {haiku.fivetwo}
+                      their words would be here
                       {' '}
                     </p>
                     <footer className="blockquote-footer">
                       {haiku.owner}
                       <cite title="Source Title">
-                        {haiku.title}
+                        maybe your friend
                       </cite>
                     </footer>
                   </blockquote>
@@ -131,21 +121,19 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post
+                post:
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
                     <p>
                       {' '}
-                      {haiku.fiveone}
-                      {haiku.seven}
-                      {haiku.fivetwo}
+                      this is another haiku
                       {' '}
                     </p>
                     <footer className="blockquote-footer">
                       {haiku.owner}
                       <cite title="Source Title">
-                        {haiku.title}
+                        could be you
                       </cite>
                     </footer>
                   </blockquote>
