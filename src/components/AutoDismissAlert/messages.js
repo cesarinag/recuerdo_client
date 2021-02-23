@@ -5,5 +5,9 @@ export default {
   signInFailure: 'Failed to sign in. Check your email and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.'
+  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  haikusCreateSuccess: 'such a beauty',
+  haikuCreateFailure: 'oh no, here/s what happened: ',
+  haikuIndexSuccess: 'look at all those chickens',
+  haikuIndexFailure: 'please check this out: '
 }

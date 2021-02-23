@@ -1,22 +1,15 @@
-// import React, { Component } from 'react'
-// import { withRouter } from 'react-router-dom'
-// import axios from 'axios'
-import apiUrl from '../../apiConfig'
-// import Card from 'react-bootstrap/Card'
-// import Button from 'react-bootstrap/Button'
-// import { haikuCreate } from '../../api/haiku'
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import axios from 'axios'
-// import apiUrl from '../apiConfig'
-import HaikuFormat from '../HaikuFormat/HaikuFormat'
+import HaikuForm from '../HaikuForm/HaikuForm'
+import { haikuCreate } from '../../api/haiku'
 
 class CreateHaiku extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
       haiku: {
+        id: '',
         fiveone: '',
         seven: '',
         fivetwo: ''
@@ -25,49 +18,53 @@ class CreateHaiku extends Component {
     }
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault()
+    const { user, msgAlert } = this.props
     const { haiku } = this.state
-    axios({
-      method: 'post',
-      url: `${apiUrl}/haiku/`,
-      data: { haiku }
-    })
-      .then(res => this.setState({ createdId: res.data.book.id }))
-      .catch(console.error)
+    haikuCreate(haiku, user)
+      .then(res => {
+        this.setState({ createdId: res.data.haiku._id })
+        console.log(haiku)
+        return res
+      })
+      .then(res => msgAlert({
+        heading: 'you made a haiku',
+        message: 'Haiku has been created successfully.',
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Failed to Create Haiku',
+          message: 'Could not create haiku with error: ' + error.message,
+          variant: 'danger'
+        })
+      })
   }
 
-  handleInputChange = (event) => {
+  handleChange = event => {
     event.persist()
-    this.setState(currState => {
-      const { name, value } = event.target
-      const updatedField = {
-        [name]: value
+    this.setState(state => {
+      return {
+        haiku: { ...state.haiku, [event.target.name]: event.target.value }
       }
-      console.log({ ...updatedField, ...currState.haiku })
-
-      const newHaiku = {
-        ...currState.haiku,
-        ...updatedField
-      }
-
-      return { haiku: newHaiku }
     })
   }
-
   render () {
-    if (this.state.createdId) {
-      return <Redirect to={`/show-haiku/${this.state.createdId}`}/>
+    const { haiku, createdId } = this.state
+    if (createdId) {
+      // console.log('this is the createdId', createdId)
+      return <Redirect to={`/haikus/${createdId}`} />
     }
     return (
-      <Fragment>
-        <h2>Create a Haiku</h2>
-        <HaikuFormat
-          haiku={this.state.haiku}
+      <div>
+        <h3>create a haiku below</h3>
+        <HaikuForm
+          haiku={haiku}
+          handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          handleInputChange={this.handleInputChange}
         />
-      </Fragment>
+      </div>
     )
   }
 }

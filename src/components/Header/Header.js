@@ -7,7 +7,7 @@ const authenticatedOptions = (
     <Nav.Link href="#change-pw">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
     <Nav.Link href="#haikus">Index</Nav.Link>
-    <Nav.Link href="#haiku">Create</Nav.Link>
+    <Nav.Link href="#create-haiku">Create</Nav.Link>
     <Nav.Link href="#haikus/:id/">Show</Nav.Link>
   </Fragment>
 )

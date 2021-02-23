@@ -1,22 +1,16 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-export const haikuCreate = (user, haiku) => {
+export const haikuCreate = (haiku, user) => {
   return axios({
-    url: apiUrl + '/haiku/',
+    url: apiUrl + '/haikus/',
     method: 'POST',
     headers: {
       // we need the user so we have access to their token
       'Authorization': `Token ${user.token}`
     },
-    // send the cookie object as our data for creating a movie
-    data: {
-      haiku: {
-        fiveone: haiku.fiveone,
-        seven: haiku.seven,
-        fivetwo: haiku.fivetwo
-      }
-    }
+    // send the haiku object as our data for creating a movie
+    data: { haiku: haiku }
   })
 }
 
@@ -33,24 +27,18 @@ export const haikuIndex = (user, haiku) => {
 
 export const haikuUpdate = (id, haiku, user) => {
   return axios({
-    url: apiUrl + '/haiku/' + id,
+    url: apiUrl + '/haikus/' + id,
     method: 'PATCH',
     headers: {
       'Authorization': `Token ${user.token}`
     },
-    data: {
-      haiku: {
-        fiveone: haiku.fiveone,
-        seven: haiku.seven,
-        fivetwo: haiku.fivetwo
-      }
-    }
+    data: { haiku: haiku }
   })
 }
 
 export const haikuShow = (id, user) => {
   return axios({
-    url: apiUrl + '/haiku/' + id,
+    url: apiUrl + '/haikus/' + id,
     method: 'GET',
     headers: {
       'Authorization': `Token ${user.token}`

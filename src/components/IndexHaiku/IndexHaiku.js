@@ -1,49 +1,62 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
-import apiUrl from '../../apiConfig'
+import Spinner from 'react-bootstrap/Spinner'
+// import apiUrl from '../../apiConfig'
+import { haikuIndex } from '../../api/haiku'
 
 class IndexHaiku extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
+
     this.state = {
-      haiku: null
+      haikus: null
     }
   }
 
-  componentDidMount () {
-    axios(apiUrl + '/haikus/')
-      .then(res => this.setState(({ haiku: res.data.haiku })))
-      .catch(console.error)
+  componentidMount () {
+    const { msgAlert, user } = this.props
+
+    haikuIndex(user)
+      .then(res => this.setState({ haikus: res.data.haikus }))
+      .then(() => msgAlert({
+        heading: 'fetched haikus for fun',
+        message: 'here are the things',
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'error for you',
+          message: 'please refer to this error: ' + error.message,
+          variant: 'danger'
+        })
+      })
   }
 
   render () {
-    let haikuJsx
+    const { haikus } = this.state
 
-    if (!this.state.haiku) {
-      haikuJsx = 'Loading still...'
-    } else if (this.state.haiku.length === 0) {
-      haikuJsx = 'do you even Haiku?'
-    } else {
-      const haikuList = this.state.haiku.map(haiku => (
-        <li key={haiku.id}>
-          <Link to={`/haiku/${haiku.id}`}>
-            {haiku.owner}
-          </Link>
-        </li>
-      ))
-
-      haikuJsx = (
-        <ul>
-          {haikuList}
-        </ul>
+    if (!haikus) {
+      return (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
       )
     }
 
+    const haikusJsx = haikus.map(haikus => (
+      <Link to={`/haikus/${haikus._id}`} key={haikus._id}>
+        <li>
+          {haikus.title}
+        </li>
+      </Link>
+    ))
+
     return (
       <div>
-        <h1>Index Haiku Page</h1>
-        {haikuJsx}
+        <h3>haikus:</h3>
+        <ul>
+          {haikusJsx}
+        </ul>
       </div>
     )
   }
