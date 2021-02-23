@@ -10,6 +10,7 @@ class CreateHaiku extends Component {
     this.state = {
       haiku: {
         id: '',
+        title: '',
         fiveone: '',
         seven: '',
         fivetwo: ''

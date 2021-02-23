@@ -12,6 +12,8 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import IndexHaiku from './components/IndexHaiku/IndexHaiku'
 import CreateHaiku from './components/CreateHaiku/CreateHaiku'
 import ShowHaiku from './components/ShowHaiku/ShowHaiku'
+import './App.css'
+import Home from './components/Home/Home'
 
 class App extends Component {
   constructor (props) {
@@ -78,6 +80,9 @@ class App extends Component {
             <ShowHaiku msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
+        <Route user={user} exact path='/' render={() => (
+          <Home user={user} />
+        )} />
       </Fragment>
     )
   }

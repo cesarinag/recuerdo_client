@@ -1,6 +1,7 @@
 const haikus = [
   {
     id: 0,
+    title: '',
     owner: 'basho',
     fiveone: 'the summer grasses',
     seven: 'all that remains',
@@ -8,6 +9,7 @@ const haikus = [
   },
   {
     id: 1,
+    title: '',
     owner: '',
     fiveone: 'an ocean voyage',
     seven: 'as waves break over the bow',
@@ -15,6 +17,7 @@ const haikus = [
   },
   {
     id: 2,
+    title: '',
     owner: '',
     fiveone: 'butterflies are cool',
     seven: 'in the big, huge green forest',
@@ -22,6 +25,7 @@ const haikus = [
   },
   {
     id: 3,
+    title: '',
     owner: '',
     fiveone: 'warm soup in a bowl',
     seven: 'letters of the alphabet',
@@ -29,6 +33,7 @@ const haikus = [
   },
   {
     id: 4,
+    title: '',
     owner: '',
     fiveone: 'watching the snow fall',
     seven: 'such beauty in front of me',

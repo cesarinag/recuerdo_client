@@ -46,11 +46,11 @@ class ShowHaiku extends Component {
 
     return (
       <div>
-        <h3>{haiku.id}</h3>
+        <h3>{haiku.title}</h3>
         <h4>{haiku.fiveone}</h4>
         <h4>{haiku.seven}</h4>
         <h4>{haiku.fivetwo}</h4>
-        <button>delete haiku</button>
+        {/* <button>delete haiku</button> */}
         <button>update haiku</button>
       </div>
     )

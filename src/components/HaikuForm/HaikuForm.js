@@ -6,23 +6,30 @@ import React from 'react'
 const HaikuForm = ({ haiku, handleSubmit, handleChange }) => (
   <form onSubmit={handleSubmit}>
     <input
+      name="title"
+      type="text"
+      placeholder="12 max"
+      value={haiku.fiveone}
+      onChange={handleChange}
+    /><br />
+    <input
       name="fiveone"
       type="text"
-      placeholder="18 characters max"
+      placeholder="18 max"
       value={haiku.fiveone}
       onChange={handleChange}
     /><br />
     <input
       name="seven"
       type="text"
-      placeholder="24 characters max"
+      placeholder="24 max"
       value={haiku.seven}
       onChange={handleChange}
     /><br />
     <input
       name="fivetwo"
       type="text"
-      placeholder="18 characters max"
+      placeholder="18 max"
       value={haiku.fivetwo}
       onChange={handleChange}
     />
