@@ -9,7 +9,7 @@ const HaikuForm = ({ haiku, handleSubmit, handleChange }) => (
       name="title"
       type="text"
       placeholder="12 max"
-      value={haiku.fiveone}
+      value={haiku.title}
       onChange={handleChange}
     /><br />
     <input

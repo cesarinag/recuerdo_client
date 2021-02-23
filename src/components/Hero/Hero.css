@@ -19,17 +19,16 @@ video {
 }
 
 .hero-container > h1 {
-  color: #fff;
+  color: #b7b7a4;
   font-size: 100px;
   margin-top: -100px;
 }
 
-.hero-container > p {
+.hero-container > h3 {
   margin-top: 8px;
-  color: #fff;
+  color: #6b705c;
   font-size: 32px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 .hero-btns {

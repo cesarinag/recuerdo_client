@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card'
 function Cards (haiku) {
   return (
     <div className='cards'>
-      <h1>featured:</h1>
+      <h3>featured:</h3>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
@@ -32,6 +32,126 @@ function Cards (haiku) {
                 </blockquote>
               </Card.Body>
             </Card>
+            <li>
+              <Card>
+                <Card.Header>
+                post
+                </Card.Header>
+                <Card.Body>
+                  <blockquote className="blockquote mb-0">
+                    <p>
+                      {' '}
+                      {haiku.fiveone}
+                      {haiku.seven}
+                      {haiku.fivetwo}
+                      {' '}
+                    </p>
+                    <footer className="blockquote-footer">
+                      {haiku.owner}
+                      <cite title="Source Title">
+                        {haiku.title}
+                      </cite>
+                    </footer>
+                  </blockquote>
+                </Card.Body>
+              </Card>
+            </li>
+            <li>
+              <Card>
+                <Card.Header>
+                post
+                </Card.Header>
+                <Card.Body>
+                  <blockquote className="blockquote mb-0">
+                    <p>
+                      {' '}
+                      {haiku.fiveone}
+                      {haiku.seven}
+                      {haiku.fivetwo}
+                      {' '}
+                    </p>
+                    <footer className="blockquote-footer">
+                      {haiku.owner}
+                      <cite title="Source Title">
+                        {haiku.title}
+                      </cite>
+                    </footer>
+                  </blockquote>
+                </Card.Body>
+              </Card>
+            </li>
+            <li>
+              <Card>
+                <Card.Header>
+                post
+                </Card.Header>
+                <Card.Body>
+                  <blockquote className="blockquote mb-0">
+                    <p>
+                      {' '}
+                      {haiku.fiveone}
+                      {haiku.seven}
+                      {haiku.fivetwo}
+                      {' '}
+                    </p>
+                    <footer className="blockquote-footer">
+                      {haiku.owner}
+                      <cite title="Source Title">
+                        {haiku.title}
+                      </cite>
+                    </footer>
+                  </blockquote>
+                </Card.Body>
+              </Card>
+            </li>
+            <li>
+              <Card>
+                <Card.Header>
+                post
+                </Card.Header>
+                <Card.Body>
+                  <blockquote className="blockquote mb-0">
+                    <p>
+                      {' '}
+                      {haiku.fiveone}
+                      {haiku.seven}
+                      {haiku.fivetwo}
+                      {' '}
+                    </p>
+                    <footer className="blockquote-footer">
+                      {haiku.owner}
+                      <cite title="Source Title">
+                        {haiku.title}
+                      </cite>
+                    </footer>
+                  </blockquote>
+                </Card.Body>
+              </Card>
+            </li>
+            <li>
+              <Card>
+                <Card.Header>
+                post
+                </Card.Header>
+                <Card.Body>
+                  <blockquote className="blockquote mb-0">
+                    <p>
+                      {' '}
+                      {haiku.fiveone}
+                      {haiku.seven}
+                      {haiku.fivetwo}
+                      {' '}
+                    </p>
+                    <footer className="blockquote-footer">
+                      {haiku.owner}
+                      <cite title="Source Title">
+                        {haiku.title}
+                      </cite>
+                    </footer>
+                  </blockquote>
+                </Card.Body>
+              </Card>
+            </li>
           </ul>
         </div>
       </div>
