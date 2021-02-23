@@ -23,12 +23,8 @@ class CreateHaiku extends Component {
     const { user, msgAlert } = this.props
     const { haiku } = this.state
     haikuCreate(haiku, user)
-      .then(res => {
-        this.setState({ createdId: res.data.haiku._id })
-        console.log(haiku)
-        return res
-      })
-      .then(res => msgAlert({
+      .then(res => this.setState({ createdId: res.data.haiku }))
+      .then(() => msgAlert({
         heading: 'you made a haiku',
         message: 'Haiku has been created successfully.',
         variant: 'success'

@@ -1,63 +1,60 @@
-import React, { Component, Fragment } from 'react'
-import { Redirect, Link } from 'react-router-dom'
-import axios from 'axios'
-import apiUrl from '../../apiConfig'
+import React, { Component } from 'react'
+import Spinner from 'react-bootstrap/Spinner'
+import { withRouter } from 'react-router-dom'
+import { haikuShow } from '../../api/haiku'
 
 class ShowHaiku extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
-      haiku: null,
-      deleted: false
+      haiku: null
     }
   }
 
   componentDidMount () {
-    axios(`${apiUrl}/haikus/${this.props.match.params.id}`)
-      .then(res => this.setState({ haiku: res.data.haiku }))
-      .catch(console.error)
-  }
+    const { user, match, msgAlert } = this.props
 
-  deleteHaiku = () => {
-    axios({
-      url: `${apiUrl}/haikus/${this.props.match.params.id}`,
-      method: 'delete'
-    })
-      .then(() => this.setState({ deleted: true }))
-      .catch(console.error)
+    // make a request for a signle haiku
+    haikuShow(match.params.id, user)
+    // set the movie state to the haiku we got back in the responses data
+      .then(res => this.setState({ haiku: res.data.haiku }))
+      .then(() => msgAlert({
+        heading: 'here is one',
+        message: 'just the one here',
+        variant: 'success'
+      }))
+      .catch(error => [
+        msgAlert({
+          heading: 'show haiku fail',
+          message: 'cannot show u bc: ' + error.message,
+          variant: 'danger'
+        })
+      ])
   }
 
   render () {
-    let haikuJsx
-    const { haiku, deleted } = this.state
+    const { haiku } = this.state
 
-    if (deleted) {
-      return <Redirect to="/haikus/"/>
-    } if (!haiku) {
-      haikuJsx = <img style={{ width: '30%' }} src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt="loading gif"/>
-    } else {
-      haikuJsx = (
-        <Fragment>
-          <h3>{haiku.fiveone}</h3>
-          <h3>{haiku.seven}</h3>
-          <h3>{haiku.fivetwo}</h3>
-          <p>Written by: {haiku.owner}</p>
-          <button onClick={this.deleteHaiku}>Delete Haiku</button>
-          <button>
-            <Link to={`/update-haiku/${haiku.id}`}>Update Haiku</Link>
-          </button>
-        </Fragment>
+    if (!haiku) {
+      return (
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
       )
     }
 
     return (
-      <Fragment>
-        <h2>Show Me The Haiku</h2>
-        {deleted ? <Redirect to="haikus"/> : haikuJsx}
-      </Fragment>
+      <div>
+        <h3>{haiku.id}</h3>
+        <h4>{haiku.fiveone}</h4>
+        <h4>{haiku.seven}</h4>
+        <h4>{haiku.fivetwo}</h4>
+        <button>delete haiku</button>
+        <button>update haiku</button>
+      </div>
     )
   }
 }
 
-export default ShowHaiku
+export default withRouter(ShowHaiku)

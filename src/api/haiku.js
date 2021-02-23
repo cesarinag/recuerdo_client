@@ -10,7 +10,7 @@ export const haikuCreate = (haiku, user) => {
       'Authorization': `Token ${user.token}`
     },
     // send the haiku object as our data for creating a movie
-    data: { haiku: haiku }
+    data: { haiku }
   })
 }
 
