@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card'
 function Cards (haiku) {
   return (
     <div className='cards'>
-      <h3>featured:</h3>
+      <h3>featured haikus:</h3>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
@@ -43,9 +43,9 @@ function Cards (haiku) {
                       {' '}
                     </p>
                     <footer className="blockquote-footer">
-                      basho
+                      {haiku.owner}
                       <cite title="Source Title">
-                        love and barley
+                        basho
                       </cite>
                     </footer>
                   </blockquote>
