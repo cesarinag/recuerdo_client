@@ -3,39 +3,40 @@ import { Link } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner'
 // import apiUrl from '../../apiConfig'
 import { haikuIndex } from '../../api/haiku'
+import messages from '../AutoDismissAlert/messages'
 
 class IndexHaiku extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      haikus: null
+      haiku: null
     }
   }
 
-  componentidMount () {
-    const { msgAlert, user } = this.props
-
-    haikuIndex(user)
-      .then(res => this.setState({ haikus: res.data.haikus }))
+  componentDidMount () {
+    const { haiku, user, msgAlert } = this.props
+    console.log(haiku)
+    haikuIndex(haiku, user)
+      .then(res => this.setState({ haiku: res.data.haikus }))
       .then(() => msgAlert({
         heading: 'fetched haikus for fun',
-        message: 'here are the things',
+        message: messages.haikuIndexSuccess,
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
           heading: 'error for you',
-          message: 'please refer to this error: ' + error.message,
+          message: messages.haikuIndexFailure + error.message,
           variant: 'danger'
         })
       })
   }
 
   render () {
-    const { haikus } = this.state
+    const { haiku } = this.state
 
-    if (!haikus) {
+    if (!haiku) {
       return (
         <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>
@@ -43,10 +44,10 @@ class IndexHaiku extends Component {
       )
     }
 
-    const haikusJsx = haikus.map(haikus => (
-      <Link to={`/haikus/${haikus._id}`} key={haikus._id}>
+    const haikusJsx = haiku.map(haiku => (
+      <Link to={'/haikus/'} key={haiku.id}>
         <li>
-          {haikus.title}
+          {haiku.title}
         </li>
       </Link>
     ))

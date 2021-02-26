@@ -40,13 +40,13 @@ class CreateHaiku extends Component {
       })
       .then(res => msgAlert({
         heading: 'you made a haiku',
-        message: messages.haikusCreateSuccess,
+        message: messages.haikuCreateSuccess,
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
           heading: 'Failed to Create Haiku',
-          message: messages.haikusCreateFailure + error.message,
+          message: messages.haikuCreateFailure + error.message,
           variant: 'danger'
         })
       })

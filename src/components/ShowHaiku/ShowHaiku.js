@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Spinner from 'react-bootstrap/Spinner'
+// import Spinner from 'react-bootstrap/Spinner'
 import { withRouter } from 'react-router-dom'
 import { haikuShow } from '../../api/haiku'
 import messages from '../AutoDismissAlert/messages'
@@ -39,9 +39,7 @@ class ShowHaiku extends Component {
 
     if (!haiku) {
       return (
-        <Spinner animation="border" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner>
+        'Loading...'
       )
     }
 

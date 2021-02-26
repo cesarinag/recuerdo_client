@@ -6,7 +6,7 @@ export default {
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
-  haikusCreateSuccess: 'such a beauty',
+  haikuCreateSuccess: 'such a beauty',
   haikuCreateFailure: 'oh no, here/s what happened: ',
   haikuIndexSuccess: 'look at all those haikus',
   haikuIndexFailure: 'please check this error out: ',
