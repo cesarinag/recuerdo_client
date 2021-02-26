@@ -6,6 +6,7 @@ import React from 'react'
 const HaikuForm = ({ haiku, handleSubmit, handleChange }) => (
   <form onSubmit={handleSubmit}>
     <input
+      required
       name="title"
       type="text"
       placeholder="12 max"
@@ -13,6 +14,7 @@ const HaikuForm = ({ haiku, handleSubmit, handleChange }) => (
       onChange={handleChange}
     /><br />
     <input
+      required
       name="fiveone"
       type="text"
       placeholder="18 max"
@@ -20,6 +22,7 @@ const HaikuForm = ({ haiku, handleSubmit, handleChange }) => (
       onChange={handleChange}
     /><br />
     <input
+      required
       name="seven"
       type="text"
       placeholder="24 max"
@@ -27,6 +30,7 @@ const HaikuForm = ({ haiku, handleSubmit, handleChange }) => (
       onChange={handleChange}
     /><br />
     <input
+      required
       name="fivetwo"
       type="text"
       placeholder="18 max"

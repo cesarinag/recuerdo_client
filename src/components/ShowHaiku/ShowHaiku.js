@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Spinner from 'react-bootstrap/Spinner'
 import { withRouter } from 'react-router-dom'
 import { haikuShow } from '../../api/haiku'
+import messages from '../AutoDismissAlert/messages'
 
 class ShowHaiku extends Component {
   constructor (props) {
@@ -14,20 +15,20 @@ class ShowHaiku extends Component {
 
   componentDidMount () {
     const { user, match, msgAlert } = this.props
-
+    console.log(this.props)
     // make a request for a signle haiku
     haikuShow(match.params.id, user)
-    // set the movie state to the haiku we got back in the responses data
+    // set the haiku state to the haiku we got back in the responses data
       .then(res => this.setState({ haiku: res.data.haiku }))
       .then(() => msgAlert({
         heading: 'here is one',
-        message: 'just the one here',
+        message: messages.haikuShowSuccess,
         variant: 'success'
       }))
       .catch(error => [
         msgAlert({
           heading: 'show haiku fail',
-          message: 'cannot show u bc: ' + error.message,
+          message: messages.haikuShowFailure + error.message,
           variant: 'danger'
         })
       ])

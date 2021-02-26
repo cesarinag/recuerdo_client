@@ -14,7 +14,7 @@ export const haikuCreate = (haiku, user) => {
   })
 }
 
-export const haikuIndex = (user, haiku) => {
+export const haikuIndex = (haiku, user) => {
   return axios({
     url: apiUrl + '/haikus/',
     method: 'GET',

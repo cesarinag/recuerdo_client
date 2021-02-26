@@ -12,8 +12,7 @@ function HeroSection () {
           className="d-block w-100"
           src="https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1035&q=80"
           alt="First slide"
-          maxheight="500px"
-          maxwidth="300px"
+          style={{ width: 200, height: 475 }}
         />
         <Carousel.Caption>
           <h1>welcome to haiku75.</h1>
@@ -25,8 +24,7 @@ function HeroSection () {
           className="d-block w-100"
           src="https://images.unsplash.com/photo-1466781783364-36c955e42a7f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80"
           alt="Second slide"
-          maxheight="500px"
-          maxwidth="300px"
+          style={{ width: 200, height: 475 }}
         />
         <Carousel.Caption>
           <h1>title</h1>
@@ -38,8 +36,7 @@ function HeroSection () {
           className="d-block w-100"
           src="https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80"
           alt="Third slide"
-          maxheight="500px"
-          maxwidth="300px"
+          style={{ width: 200, height: 475 }}
         />
         <Carousel.Caption>
           <h1>your haiku</h1>

@@ -13,7 +13,6 @@ const authenticatedOptions = (
       <Dropdown.Item href="#change-pw">change password</Dropdown.Item>
       <Dropdown.Item href="#haikus">view haikus</Dropdown.Item>
       <Dropdown.Item href="#create-haiku">post haiku</Dropdown.Item>
-      <Dropdown.Item href="#haikus/:id/">search</Dropdown.Item>
       <Dropdown.Item href="#sign-out">sign out</Dropdown.Item>
     </Dropdown.Menu>
   </Dropdown>

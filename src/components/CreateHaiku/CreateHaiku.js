@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import HaikuForm from '../HaikuForm/HaikuForm'
 import { haikuCreate } from '../../api/haiku'
+// import haikus from '../data/haikus'
+import messages from '../AutoDismissAlert/messages'
 
 class CreateHaiku extends Component {
   constructor (props) {
@@ -9,7 +11,6 @@ class CreateHaiku extends Component {
 
     this.state = {
       haiku: {
-        id: '',
         title: '',
         fiveone: '',
         seven: '',
@@ -23,17 +24,29 @@ class CreateHaiku extends Component {
     event.preventDefault()
     const { user, msgAlert } = this.props
     const { haiku } = this.state
+    console.log(haiku)
     haikuCreate(haiku, user)
-      .then(res => this.setState({ createdId: res.data.haiku }))
-      .then(() => msgAlert({
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          // title: haiku.title,
+          // fiveone: haiku.fiveone,
+          // seven: haiku.seven,
+          // fivetwo: haiku.fivetwo,
+          // owner: user.id,
+          createdId: res.data.haiku.id
+        })
+        return res
+      })
+      .then(res => msgAlert({
         heading: 'you made a haiku',
-        message: 'Haiku has been created successfully.',
+        message: messages.haikusCreateSuccess,
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
           heading: 'Failed to Create Haiku',
-          message: 'Could not create haiku with error: ' + error.message,
+          message: messages.haikusCreateFailure + error.message,
           variant: 'danger'
         })
       })
@@ -47,10 +60,11 @@ class CreateHaiku extends Component {
       }
     })
   }
+
   render () {
     const { haiku, createdId } = this.state
     if (createdId) {
-      // console.log('this is the createdId', createdId)
+      console.log(`/haikus/${createdId}`)
       return <Redirect to={`/haikus/${createdId}`} />
     }
     return (

@@ -73,10 +73,10 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/haikus/' render={() => (
             <IndexHaiku msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/create-haiku/' render={() => (
+          <AuthenticatedRoute user={user} path='/create-haiku' render={() => (
             <CreateHaiku msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/haikus/:id/' render={() => (
+          <AuthenticatedRoute user={user} exact path='/haikus/:id/' render={() => (
             <ShowHaiku msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
