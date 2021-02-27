@@ -27,7 +27,7 @@ class IndexHaiku extends Component {
       .catch(error => {
         msgAlert({
           heading: 'error for you',
-          message: messages.haikuIndexFailure + error.message,
+          message: messages.haikusIndexFailure + error.message,
           variant: 'danger'
         })
       })
@@ -45,7 +45,7 @@ class IndexHaiku extends Component {
     }
 
     const haikusJsx = haiku.map(haiku => (
-      <Link to={'/haikus/'} key={haiku.id}>
+      <Link to={`/haikus/${haiku.id}`} key={haiku.id}>
         <li>
           {haiku.title}
         </li>
