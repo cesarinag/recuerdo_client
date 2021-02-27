@@ -10,33 +10,33 @@ class IndexHaiku extends Component {
     super(props)
 
     this.state = {
-      haiku: null
+      haikus: null
     }
   }
 
   componentDidMount () {
-    const { haiku, user, msgAlert } = this.props
-    console.log(haiku)
-    haikuIndex(haiku, user)
-      .then(res => this.setState({ haiku: res.data.haikus }))
+    const { user, msgAlert } = this.props
+    // console.log(haiku)
+    haikuIndex(user)
+      .then(res => this.setState({ haikus: res.data.haikus }))
       .then(() => msgAlert({
-        heading: 'fetched haikus for fun',
+        heading: 'fetched',
         message: messages.haikuIndexSuccess,
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
           heading: 'error for you',
-          message: messages.haikusIndexFailure + error.message,
+          message: messages.haikuIndexFailure + error.message,
           variant: 'danger'
         })
       })
   }
 
   render () {
-    const { haiku } = this.state
+    const { haikus } = this.state
 
-    if (!haiku) {
+    if (!haikus) {
       return (
         <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>
@@ -44,10 +44,10 @@ class IndexHaiku extends Component {
       )
     }
 
-    const haikusJsx = haiku.map(haiku => (
-      <Link to={`/haikus/${haiku.id}`} key={haiku.id}>
+    const haikusJsx = haikus.map(haikus => (
+      <Link to={`/haikus/${haikus.id}`} key={haikus.id}>
         <li>
-          {haiku.title}
+          {haikus.title}
         </li>
       </Link>
     ))

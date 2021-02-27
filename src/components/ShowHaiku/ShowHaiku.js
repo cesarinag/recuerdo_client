@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import Spinner from 'react-bootstrap/Spinner'
-import { withRouter } from 'react-router-dom'
-import { haikuShow } from '../../api/haiku'
+import { withRouter, Redirect, Link } from 'react-router-dom'
+import { haikuShow, haikuDelete } from '../../api/haiku'
 import messages from '../AutoDismissAlert/messages'
 
 class ShowHaiku extends Component {
@@ -9,7 +9,8 @@ class ShowHaiku extends Component {
     super(props)
 
     this.state = {
-      haiku: null
+      haiku: null,
+      deleted: false
     }
   }
 
@@ -34,13 +35,36 @@ class ShowHaiku extends Component {
       ])
   }
 
+  hanldeDelete = event => {
+    const { user, match, msgAlert } = this.props
+    console.log(this.props)
+    haikuDelete(match.params.id, user)
+      .then(() => this.setState({ deleted: true }))
+      .then(() => msgAlert({
+        heading: 'Deleted Haiku Successfully!',
+        message: 'Haiku deleted!',
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Deleting Haiku Failed',
+          message: 'Failed with error: ' + error.message,
+          variant: 'danger'
+        })
+      })
+  }
+
   render () {
-    const { haiku } = this.state
+    const { haiku, deleted } = this.state
 
     if (!haiku) {
       return (
-        'Loading...'
+        'Loading..'
       )
+    }
+
+    if (deleted) {
+      return <Redirect to='/haikus/' />
     }
 
     return (
@@ -49,8 +73,10 @@ class ShowHaiku extends Component {
         <h4>{haiku.fiveone}</h4>
         <h4>{haiku.seven}</h4>
         <h4>{haiku.fivetwo}</h4>
-        {/* <button>delete haiku</button> */}
-        <button>update haiku</button>
+        <button onClick={this.handleDelete}>delete haiku</button>
+        <button>
+          <Link to={`/haikus/${haiku.id}/edit`}>update haiku</Link>
+        </button>
       </div>
     )
   }

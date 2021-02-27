@@ -14,7 +14,7 @@ export const haikuCreate = (haiku, user) => {
   })
 }
 
-export const haikuIndex = (haiku, user) => {
+export const haikuIndex = user => {
   return axios({
     url: apiUrl + '/haikus/',
     method: 'GET',
@@ -44,5 +44,15 @@ export const haikuShow = (id, user) => {
       'Authorization': `Token ${user.token}`
     }
     // data: { purchases }
+  })
+}
+
+export const haikuDelete = (id, user) => {
+  return axios({
+    url: apiUrl + '/haikus/' + id,
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
   })
 }

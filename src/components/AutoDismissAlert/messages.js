@@ -1,15 +1,17 @@
 export default {
-  signUpSuccess: 'Succesfully registered! You\'ve been signed in as well.',
-  signUpFailure: 'Registration failed. Email may be taken, or passwords don\'t match.',
-  signInSuccess: 'Welcome!',
-  signInFailure: 'Failed to sign in. Check your email and password and try again.',
-  signOutSuccess: 'Come back soon!',
-  changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  signUpSuccess: 'okay, you\re in!',
+  signUpFailure: 'email may be taken, or passwords don\'t match.',
+  signInSuccess: 'come thru and haiku',
+  signInFailure: 'is it really you? check your email or password again for me',
+  signOutSuccess: 'come back pls 🥺',
+  changePasswordSuccess: 'you changed on me',
+  changePasswordFailure: 'maybe you typed your old password wrong. try that again',
   haikuCreateSuccess: 'such a beauty',
-  haikuCreateFailure: 'oh no, here/s what happened: ',
+  haikuCreateFailure: 'oh no, here is what happened: ',
   haikuIndexSuccess: 'look at all those haikus',
-  haikuIndexFailure: 'please check this error out: ',
-  haikuShowSuccess: 'look at this one',
-  haikuShowFailure: 'cannot show you this one'
+  haikuIndexFailure: 'can\t get all of them for you ',
+  haikuShowSuccess: 'fetching just the one for you',
+  haikuShowFailure: 'cannot display',
+  haikuUpateSuccess: 'okurrrr, we made some edits',
+  haikuUpdateFailure: 'cannot update for you, try that again'
 }
