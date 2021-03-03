@@ -36,7 +36,7 @@ class CreateHaiku extends Component {
           // owner: user.id,
           createdId: res.data.haiku.id
         })
-        return res
+        // return res
       })
       .then(res => msgAlert({
         heading: 'you made a haiku',
@@ -64,7 +64,7 @@ class CreateHaiku extends Component {
   render () {
     const { haiku, createdId } = this.state
     if (createdId) {
-      console.log(`/haikus/${createdId}`)
+      // console.log(`/haikus/${createdId}`)
       return <Redirect to={`/haikus/${createdId}`} />
     }
     return (

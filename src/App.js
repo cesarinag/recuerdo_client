@@ -12,6 +12,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import IndexHaiku from './components/IndexHaiku/IndexHaiku'
 import CreateHaiku from './components/CreateHaiku/CreateHaiku'
 import ShowHaiku from './components/ShowHaiku/ShowHaiku'
+import UpdateHaiku from './components/UpdateHaiku/UpdateHaiku'
 import './App.css'
 import Home from './components/Home/Home'
 
@@ -70,14 +71,17 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-pw/' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/haikus/' render={() => (
+          <AuthenticatedRoute user={user} exact path='/haikus/' render={() => (
             <IndexHaiku msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/create-haiku' render={() => (
+          <AuthenticatedRoute user={user} path='/create-haiku/' render={() => (
             <CreateHaiku msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/haikus/:id/' render={() => (
             <ShowHaiku msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/haikus/:id/edit/' render={() => (
+            <UpdateHaiku msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
         <Route user={user} exact path='/' render={() => (

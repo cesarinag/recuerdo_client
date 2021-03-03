@@ -35,9 +35,9 @@ class ShowHaiku extends Component {
       ])
   }
 
-  hanldeDelete = event => {
+  handleDelete = event => {
     const { user, match, msgAlert } = this.props
-    console.log(this.props)
+    console.log('this is props', this.props)
     haikuDelete(match.params.id, user)
       .then(() => this.setState({ deleted: true }))
       .then(() => msgAlert({
@@ -56,15 +56,15 @@ class ShowHaiku extends Component {
 
   render () {
     const { haiku, deleted } = this.state
-
     if (!haiku) {
       return (
         'Loading..'
       )
     }
-
     if (deleted) {
-      return <Redirect to='/haikus/' />
+      console.log('It is deleted')
+      console.log('/haikus/')
+      return <Redirect to="/haikus/" />
     }
 
     return (
@@ -75,7 +75,7 @@ class ShowHaiku extends Component {
         <h4>{haiku.fivetwo}</h4>
         <button onClick={this.handleDelete}>delete haiku</button>
         <button>
-          <Link to={`/haikus/${haiku.id}/edit`}>update haiku</Link>
+          <Link to={`/haikus/${haiku.id}/edit/`}>update haiku</Link>
         </button>
       </div>
     )

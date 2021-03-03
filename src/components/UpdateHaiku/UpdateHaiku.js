@@ -80,7 +80,7 @@ class UpdateHaiku extends Component {
     }
     return (
       <div>
-        <h3>Edit Movie</h3>
+        <h3>edit haiku</h3>
         <HaikuForm
           haiku={haiku}
           handleChange={this.handleChange}

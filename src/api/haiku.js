@@ -27,7 +27,7 @@ export const haikuIndex = user => {
 
 export const haikuUpdate = (id, haiku, user) => {
   return axios({
-    url: apiUrl + '/haikus/' + id,
+    url: apiUrl + '/haikus/' + id + '/',
     method: 'PATCH',
     headers: {
       'Authorization': `Token ${user.token}`
@@ -38,7 +38,7 @@ export const haikuUpdate = (id, haiku, user) => {
 
 export const haikuShow = (id, user) => {
   return axios({
-    url: apiUrl + '/haikus/' + id,
+    url: apiUrl + '/haikus/' + id + '/',
     method: 'GET',
     headers: {
       'Authorization': `Token ${user.token}`
@@ -49,7 +49,7 @@ export const haikuShow = (id, user) => {
 
 export const haikuDelete = (id, user) => {
   return axios({
-    url: apiUrl + '/haikus/' + id,
+    url: apiUrl + '/haikus/' + id + '/',
     method: 'DELETE',
     headers: {
       'Authorization': `Token ${user.token}`
