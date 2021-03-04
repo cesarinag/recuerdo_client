@@ -24,10 +24,10 @@ class CreateHaiku extends Component {
     event.preventDefault()
     const { user, msgAlert } = this.props
     const { haiku } = this.state
-    console.log(haiku)
+    // console.log(haiku)
     haikuCreate(haiku, user)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         this.setState({
           // title: haiku.title,
           // fiveone: haiku.fiveone,

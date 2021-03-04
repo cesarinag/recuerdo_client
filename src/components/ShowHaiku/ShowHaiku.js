@@ -16,7 +16,7 @@ class ShowHaiku extends Component {
 
   componentDidMount () {
     const { user, match, msgAlert } = this.props
-    console.log(this.props)
+    // console.log(this.props)
     // make a request for a signle haiku
     haikuShow(match.params.id, user)
     // set the haiku state to the haiku we got back in the responses data
@@ -37,7 +37,7 @@ class ShowHaiku extends Component {
 
   handleDelete = event => {
     const { user, match, msgAlert } = this.props
-    console.log('this is props', this.props)
+    // console.log('this is props', this.props)
     haikuDelete(match.params.id, user)
       .then(() => this.setState({ deleted: true }))
       .then(() => msgAlert({
@@ -62,8 +62,8 @@ class ShowHaiku extends Component {
       )
     }
     if (deleted) {
-      console.log('It is deleted')
-      console.log('/haikus/')
+      // console.log('It is deleted')
+      // console.log('/haikus/')
       return <Redirect to="/haikus/" />
     }
 
