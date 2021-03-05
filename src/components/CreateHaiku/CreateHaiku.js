@@ -69,12 +69,14 @@ class CreateHaiku extends Component {
     }
     return (
       <div>
-        <h3>create a haiku below</h3>
-        <HaikuForm
-          haiku={haiku}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
+        <h1><center>create a haiku below:</center></h1>
+        <center>
+          <HaikuForm
+            haiku={haiku}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        </center>
       </div>
     )
   }

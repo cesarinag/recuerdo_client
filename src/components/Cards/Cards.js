@@ -1,18 +1,18 @@
 import React from 'react'
-import './Cards.css'
+// import './Cards.css'
 // import CardItem from './CardItem'
 import Card from 'react-bootstrap/Card'
 
 function Cards (haiku) {
   return (
     <div className='cards'>
-      <h3>featured haikus:</h3>
+      <h1><i>featured haikus:</i></h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <Card>
               <Card.Header>
-              post:
+              i love haiku75
               </Card.Header>
               <Card.Body>
                 <blockquote className="blockquote mb-0">
@@ -33,7 +33,7 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post:
+                haikus do not often have titles
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
@@ -55,13 +55,13 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post:
+                dark chocolate is the best
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
                     <p>
                       {' '}
-                      a chocolatiere????
+                      a chocolatiere ate chocolate
                       {' '}
                     </p>
                     <footer className="blockquote-footer">
@@ -77,7 +77,7 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post:
+                never silence your friends
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
@@ -99,7 +99,7 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post:
+                posted like a card
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
@@ -121,7 +121,7 @@ function Cards (haiku) {
             <li>
               <Card>
                 <Card.Header>
-                post:
+                this is fun
                 </Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
