@@ -73,9 +73,11 @@ class ShowHaiku extends Component {
         <h4>{haiku.fiveone}</h4>
         <h4>{haiku.seven}</h4>
         <h4>{haiku.fivetwo}</h4>
-        <button onClick={this.handleDelete}>delete haiku</button>
+        <button onClick={this.handleDelete}><h4><center>delete haiku</center></h4></button>
+        <br />
+        <hr />
         <button>
-          <Link to={`/haikus/${haiku.id}/edit/`}>update haiku</Link>
+          <Link to={`/haikus/${haiku.id}/edit/`}><h4><center>update haiku</center></h4></Link>
         </button>
       </div>
     )

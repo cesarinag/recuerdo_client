@@ -1,4 +1,5 @@
 import React from 'react'
+import './HaikuForm.css'
 
 // accepts functions to be run as properties
 // these functions live in the parent component when `BookForm` is used
@@ -38,7 +39,7 @@ const HaikuForm = ({ haiku, handleSubmit, handleChange }) => (
       value={haiku.fivetwo}
       onChange={handleChange}
     /><hr /><br/>
-    <button type="submit">Submit</button>
+    <button type="submit"><h4>Submit</h4></button>
   </form>
 )
 

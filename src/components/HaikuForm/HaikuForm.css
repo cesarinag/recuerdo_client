@@ -1,0 +1,25 @@
+input {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+}
+
+
+input[type=text]:focus {
+  background-color: #f0efeb;
+  border: 2px solid #d8e2dc;
+  font-size: 24px;
+  color: #6c584c;
+}
+
+button {
+  background-color: #6b705c;
+  border: none;
+  color: #f8edeb;
+  padding: 16px 32px;
+  text-decoration: underline;
+  margin: auto;
+  cursor: pointer;
+  width: 100%;
+}
