@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card'
 function Cards (haiku) {
   return (
     <div className='cards'>
-      <h1><i>featured haikus:</i></h1>
+      <h3><i>featured haikus:</i></h3>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
