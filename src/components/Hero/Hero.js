@@ -60,13 +60,13 @@ function HeroSection () {
           <br/>
           <h5><center>haiku75. gets its name from the total amount of characters allowed to create one!</center></h5>
           <br/>
-          <h5><center>we ask you to take on the challenge of the following max chracter structure:</center></h5>
+          <h5><center>we ask you to take on the challenge of the following structure:</center></h5>
           <br />
           <center>
             <h5>
           title: 15 characters maximum
               <br/>
-          fives: 18 chracters each maximum
+          fives: 18 characters each maximum
               <br/>
           seven: 24 characters maximum
               <br/>
