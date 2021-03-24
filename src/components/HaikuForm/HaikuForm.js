@@ -2,7 +2,7 @@ import React from 'react'
 import './HaikuForm.css'
 
 // accepts functions to be run as properties
-// these functions live in the parent component when `BookForm` is used
+// these functions live in the parent component when `HaikuForm` is used
 
 const HaikuForm = ({ haiku, handleSubmit, handleChange }) => (
   <form onSubmit={handleSubmit}>
